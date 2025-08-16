@@ -1,15 +1,12 @@
 'use client'
 import { motion } from 'framer-motion';
-import jwt from 'jsonwebtoken';
 import { ChevronLeft, ChevronRight, LogOut, Map, Menu } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { useEffect, useMemo, useState } from 'react';
-
-// === tus componentes (ajusta rutas) ===
+import { useMemo, useState } from 'react';
+import AssistantComponent from '../components/Chat/assistantComponent.js';
 const PlanificadorRutas = dynamic(() => import('@/app/components/View/PlanificadorRutas'), { ssr: false });
-// ejemplo liviano (puedes borrarlo si ya tienes otro)
 
 
 export default function DashboardLayout() {
@@ -32,13 +29,7 @@ export default function DashboardLayout() {
     [routes, activeRoute]
   );
 
-  useEffect(() => {
-    const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
-    if (!token) { navigator.push('/login'); return; }
-    const decoded = jwt.decode(token);
-    setUser(decoded || null);
-    setRol(decoded?.role === 'ADMIN' ? 'Admin' : 'User');
-  }, [navigator]);
+  
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -124,8 +115,9 @@ export default function DashboardLayout() {
     </div>
         )}
       </div>
+           <AssistantComponent/>
+
       </div>
-      
     </div>
   );
 }
