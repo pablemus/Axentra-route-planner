@@ -21,7 +21,7 @@ This is a **monorepo** with frontend and backend separated:
 ```
 Axentra-route-planner/
 │── axentra-frontend/   # Next.js + React app (UI, maps, drag & drop)
-│── axentra-backend/    # Node.js (Fastify/Express) + ORS/VROOM APIs
+│── axentra-backend/    # Node.js (Fastify)
 └── README.md
 ```
 
