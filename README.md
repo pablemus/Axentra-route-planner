@@ -10,6 +10,8 @@
 **Axentra Route Planner** is a modern platform for **logistics route planning and optimization**.  
 It provides an interactive map with draggable waypoints, custom polygons/zones, and automatic route optimization with ORS/VROOM (You will need your local ORS/VROOM instance).  
 
+[You can find a working demo here](https://axentra.dev/dashboard)
+
 ---
 
 ## 📂 Project Structure  
@@ -19,7 +21,7 @@ This is a **monorepo** with frontend and backend separated:
 ```
 Axentra-route-planner/
 │── axentra-frontend/   # Next.js + React app (UI, maps, drag & drop)
-│── axentra-backend/    # Node.js (Fastify/Express) + ORS/VROOM APIs
+│── axentra-backend/    # Node.js (Fastify)
 └── README.md
 ```
 
